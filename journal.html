@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Trang nhật ký | Mùa Hè Xanh</title><link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body data-page="journal">
+  <header class="site-header"><a class="brand" href="/"><span class="brand-mark">♥</span><span>Nhật ký áo xanh</span></a><nav><a href="/">Trang chủ</a><a class="active" href="#entry">Nhật ký</a><a class="print-link" data-print-link href="#" target="_blank" hidden>Xem bản in ↗</a><a class="nav-cta" href="/write.html">Viết nhật ký</a></nav></header>
+  <main id="journal-root" class="journal-root" aria-live="polite"><div class="page-loading">Đang giở trang nhật ký...</div></main>
+
+  <dialog id="lightbox" class="lightbox"><button class="lightbox-close" aria-label="Đóng">×</button><button class="lightbox-prev" aria-label="Ảnh trước">‹</button><figure><img src="" alt=""><figcaption></figcaption></figure><button class="lightbox-next" aria-label="Ảnh sau">›</button></dialog>
+
+  <template id="journal-template">
+    <article>
+      <section class="journal-masthead paper-texture"><div class="mini-sun">☀</div><p>NHẬT KÝ</p><h1>MÙA HÈ XANH</h1><b>2025</b><a href="#entry" class="scroll-cue">Lật trang ↓</a></section>
+      <section id="entry" class="entry-page paper-texture"><div class="entry-top"><p class="entry-campaign">MÙA HÈ XANH <b>2025</b></p><span class="volunteer">☻</span></div><div class="letter-card"><p class="entry-date"></p><h2 class="entry-title"></h2><p class="entry-content"></p><p class="entry-source"></p><p class="entry-author"></p></div></section>
+      <section class="gallery-page paper-texture"><div class="gallery-heading"><p>NHẬT KÝ</p><h2>MÙA HÈ XANH <b>2025</b></h2></div><div id="gallery" class="photo-gallery"></div><p class="closing-message"></p><div class="heart-divider">❧ ♥ ❧</div></section>
+      <section class="comments-section"><div class="comments-heading"><p class="eyebrow">Gửi lại một chút thương</p><h2>Lời nhắn bên trang nhật ký</h2><p>Chia sẻ cảm xúc của bạn. Bạn có thể ghi tên hoặc chọn ẩn danh.</p></div><form id="comment-form" class="comment-form"><label>Tên hiển thị<input name="displayName" maxlength="80" placeholder="Tên của bạn"></label><label class="anonymous-toggle"><input type="checkbox" name="isAnonymous"><span>Gửi lời nhắn ẩn danh</span></label><label class="full">Lời nhắn<textarea name="content" maxlength="1200" required placeholder="Viết điều bạn muốn nhắn gửi..."></textarea></label><button class="button primary" type="submit">Gửi lời nhắn ♥</button><p class="form-status" role="status"></p></form><div id="comments-list" class="comments-list"></div></section>
+    </article>
+  </template>
+  <footer><div class="print-qr" hidden><p>Quét để xem bản in điện tử</p><div class="qr-code"></div></div><div class="footer-mark">♥</div><p>Một mùa hè - Một hành trình<br>Một thanh xuân - Một kỷ niệm đẹp!</p><small>Nhật ký Mùa Hè Xanh 2025</small></footer>
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+  <script src="/assets/js/print-edition.js" defer></script>
+  <script src="/assets/js/journal.js" defer></script>
+</body>
+</html>

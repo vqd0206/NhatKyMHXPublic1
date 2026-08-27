@@ -1,0 +1,12 @@
+{
+  "campaigns": [
+    {
+      "id": "mhx-2025",
+      "name": "Mùa Hè Xanh 2025",
+      "year": 2025,
+      "location": "Bản Chột, xã Vân Hồ, tỉnh Sơn La",
+      "tagline": "Một mùa hè - Một hành trình. Một thanh xuân - Một kỷ niệm đẹp!",
+      "status": "published"
+    }
+  ]
+}

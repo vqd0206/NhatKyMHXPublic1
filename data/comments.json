@@ -1,0 +1,37 @@
+{
+  "comments": [
+    {
+      "id": "comment-welcome-01",
+      "journalId": "journal-ban-chot-01",
+      "parentId": null,
+      "displayName": "Một người bạn áo xanh",
+      "isAnonymous": true,
+      "content": "Cảm ơn vì đã cất giữ một mùa hè thật đẹp. Đọc xong lại thấy nhớ bản làng và mọi người quá!",
+      "status": "approved",
+      "createdAt": "2026-08-25T14:30:00.000Z",
+      "reactions": 0
+    },
+    {
+      "id": "72eb72a9-c33d-4115-ac3f-3a01b1e0cd6d",
+      "journalId": "journal-ban-chot-01",
+      "parentId": null,
+      "displayName": "VQĐ",
+      "isAnonymous": false,
+      "content": "Lời nhắn mẫu",
+      "status": "approved",
+      "createdAt": "2026-08-27T01:51:39.904Z",
+      "reactions": 0
+    },
+    {
+      "id": "4a808191-c7c7-4145-945e-d4bc57d8b5d4",
+      "journalId": "journal-ban-chot-01",
+      "parentId": null,
+      "displayName": "Một người bạn áo xanh",
+      "isAnonymous": true,
+      "content": "qqqqqqq",
+      "status": "hidden",
+      "createdAt": "2026-08-27T04:12:10.853Z",
+      "reactions": 0
+    }
+  ]
+}

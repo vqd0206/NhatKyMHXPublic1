@@ -1,0 +1,13 @@
+{
+  "name": "nhat-ky-mua-he-xanh",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tạp chí Mùa Hè Xanh tương tác dùng JSON làm kho dữ liệu",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js && node --check assets/js/app.js && node --check assets/js/journal.js && node --check assets/js/write.js && node --check assets/js/admin.js && node --check assets/js/print-edition.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
