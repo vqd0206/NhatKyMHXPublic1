@@ -37,7 +37,7 @@ async function loadCommunityGallery() {
       return;
     }
     root.innerHTML = media.map(item => {
-      if (item.type === 'embed') return `<figure class="community-item community-video"><iframe src="${escapeHtml(item.url)}" title="${escapeHtml(item.alt)}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><figcaption>${escapeHtml(item.caption || 'Video kỷ niệm')}</figcaption></figure>`;
+      if (item.type === 'embed') return `<figure class="community-item community-video embed-preview"><iframe src="${escapeHtml(item.url)}" title="${escapeHtml(item.alt)}" loading="lazy" tabindex="-1"></iframe><button class="video-modal-trigger" type="button" data-video-url="${escapeHtml(item.url)}" data-video-title="${escapeHtml(item.alt)}" data-video-caption="${escapeHtml(item.caption || 'Video kỷ niệm')}" aria-label="Mở video ${escapeHtml(item.caption || 'kỷ niệm')}"><span>▶</span><b>Xem video</b></button><figcaption>${escapeHtml(item.caption || 'Video kỷ niệm')}</figcaption></figure>`;
       if (item.type === 'video') return `<figure class="community-item community-video"><video src="${escapeHtml(item.url)}" controls preload="metadata" playsinline></video><figcaption>${escapeHtml(item.caption || 'Video kỷ niệm')}</figcaption></figure>`;
       return `<a class="community-item" href="${escapeHtml(item.url)}" target="_blank"><img src="${escapeHtml(item.url)}" alt="${escapeHtml(item.alt)}" loading="lazy"><span>${escapeHtml(item.caption || 'Ảnh kỷ niệm')}</span></a>`;
     }).join('');

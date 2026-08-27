@@ -10,6 +10,99 @@
       "caption": "Bức hình kỷ niệm",
       "sortOrder": 0,
       "createdAt": "2026-08-27T04:15:26.140Z"
+    },
+    {
+      "id": "1b83db1d-5b65-4d7d-95cc-895b21c4019f",
+      "journalId": "journal-ban-chot-01",
+      "scope": "journal",
+      "type": "image",
+      "url": "/assets/images/uploads/1b83db1d-5b65-4d7d-95cc-895b21c4019f.png",
+      "alt": "Ảnh kỷ niệm 1",
+      "caption": "Nền Nhật ký Mùa Hè Xanh 2025 (Bản Online)",
+      "sortOrder": 0,
+      "createdAt": "2026-08-27T04:26:12.913Z"
+    },
+    {
+      "id": "7e0478fe-fb5a-40d0-b891-91d5eef8104e",
+      "journalId": "journal-ban-chot-01",
+      "scope": "journal",
+      "type": "embed",
+      "provider": "google-drive",
+      "url": "https://drive.google.com/file/d/1EaDQI_-6rA10XHJ-z2YajMweWEu2jCsB/preview",
+      "alt": "Video Google Drive",
+      "caption": "Video từ Google Drive",
+      "sortOrder": 1,
+      "createdAt": "2026-08-27T04:26:12.913Z"
+    },
+    {
+      "id": "6bf64e8c-19fd-4c0b-8f55-e28327b9b598",
+      "journalId": "journal-ban-chot-01",
+      "scope": "journal",
+      "type": "embed",
+      "provider": "google-drive",
+      "url": "https://drive.google.com/file/d/1hAQU_1gw212TaxPm94cCZwCybt7p5iin/preview",
+      "alt": "Video Google Drive",
+      "caption": "Video từ Google Drive",
+      "sortOrder": 3,
+      "createdAt": "2026-08-27T04:26:12.913Z"
+    },
+    {
+      "id": "9a63e5fa-b0d0-4bc9-91c4-0e430539655c",
+      "journalId": "journal-ban-chot-01",
+      "scope": "journal",
+      "type": "image",
+      "url": "/assets/images/uploads/9a63e5fa-b0d0-4bc9-91c4-0e430539655c.png",
+      "alt": "Ảnh kỷ niệm 1",
+      "caption": "Nền Nhật ký Mùa Hè Xanh 2025 (Bản Online)",
+      "sortOrder": 0,
+      "createdAt": "2026-08-27T04:27:42.388Z"
+    },
+    {
+      "id": "a81f3122-e1ab-4008-8424-1e979a3eaf66",
+      "journalId": "journal-ban-chot-01",
+      "scope": "journal",
+      "type": "embed",
+      "provider": "google-drive",
+      "url": "https://drive.google.com/file/d/1EaDQI_-6rA10XHJ-z2YajMweWEu2jCsB/preview",
+      "alt": "Video Google Drive",
+      "caption": "Video từ Google Drive",
+      "sortOrder": 1,
+      "createdAt": "2026-08-27T04:27:42.388Z"
+    },
+    {
+      "id": "49a24c87-1687-4c27-b506-3c42cff65660",
+      "journalId": "journal-ban-chot-01",
+      "scope": "journal",
+      "type": "embed",
+      "provider": "google-drive",
+      "url": "https://drive.google.com/file/d/1hAQU_1gw212TaxPm94cCZwCybt7p5iin/preview",
+      "alt": "Video Google Drive",
+      "caption": "Video từ Google Drive",
+      "sortOrder": 3,
+      "createdAt": "2026-08-27T04:27:42.388Z"
+    },
+    {
+      "id": "06399e98-908d-45a6-8cb2-591da63a66bc",
+      "journalId": "journal-ban-chot-01",
+      "scope": "journal",
+      "type": "embed",
+      "provider": "youtube",
+      "url": "https://www.youtube-nocookie.com/embed/F__YjVhT8o8",
+      "alt": "Video YouTube",
+      "caption": "Video từ YouTube",
+      "sortOrder": 5,
+      "createdAt": "2026-08-27T04:27:42.388Z"
+    },
+    {
+      "id": "9cb90c1c-5f77-4923-a849-43564c5b04ce",
+      "journalId": null,
+      "scope": "global",
+      "type": "image",
+      "url": "/assets/images/uploads/9cb90c1c-5f77-4923-a849-43564c5b04ce.png",
+      "alt": "Mục thư viện 1",
+      "caption": "Hôm về này",
+      "sortOrder": 0,
+      "createdAt": "2026-08-27T04:31:34.305Z"
     }
   ]
 }
