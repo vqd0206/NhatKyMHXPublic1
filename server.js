@@ -137,6 +137,19 @@ function normalizeEmbedUrl(rawUrl) {
 
 async function saveMedia(files, links, journalId, scope = 'journal') {
   const mediaStore = await readStore('media');
+  const belongsToTarget = item => item.scope === scope && item.journalId === journalId;
+  const targetMedia = mediaStore.media.filter(belongsToTarget);
+  const existingHashes = new Set();
+  for (const item of targetMedia) {
+    if (item.contentHash) { existingHashes.add(item.contentHash); continue; }
+    if (!item.url?.startsWith('/assets/images/uploads/')) continue;
+    try {
+      const buffer = await fsp.readFile(path.join(UPLOAD_DIR, path.basename(item.url)));
+      item.contentHash = crypto.createHash('sha256').update(buffer).digest('hex');
+      existingHashes.add(item.contentHash);
+    } catch {}
+  }
+  const existingEmbedUrls = new Set(targetMedia.filter(item => item.type === 'embed').map(item => item.url));
   const allowed = { 'image/jpeg': 'jpg', 'image/png': 'png', 'image/webp': 'webp', 'video/mp4': 'mp4', 'video/webm': 'webm' };
   const inputFiles = (Array.isArray(files) ? files : []).slice(0, 20);
   const uniqueLinks = [...new Set((Array.isArray(links) ? links : []).map(link => String(link).trim()).filter(Boolean))];
@@ -147,23 +160,23 @@ async function saveMedia(files, links, journalId, scope = 'journal') {
     const buffer = Buffer.from(match[2], 'base64');
     const isVideo = match[1].startsWith('video/');
     if (!buffer.length || buffer.length > (isVideo ? 20 : 8) * 1024 * 1024) throw Object.assign(new Error(`${isVideo ? 'Video' : 'Ảnh'} số ${index + 1} vượt quá dung lượng cho phép.`), { status: 400 });
-    return { file, buffer, isVideo, mime: match[1] };
-  });
+    return { file, buffer, isVideo, mime: match[1], contentHash: crypto.createHash('sha256').update(buffer).digest('hex') };
+  }).filter(validated => { if (existingHashes.has(validated.contentHash)) return false; existingHashes.add(validated.contentHash); return true; });
   const normalizedLinks = uniqueLinks.map((link, index) => {
     const normalized = normalizeEmbedUrl(link);
     if (!normalized) throw Object.assign(new Error(`Liên kết video số ${index + 1} không phải YouTube hoặc Google Drive hợp lệ.`), { status: 400 });
     return normalized;
-  });
+  }).filter(normalized => { if (existingEmbedUrls.has(normalized.embedUrl)) return false; existingEmbedUrls.add(normalized.embedUrl); return true; });
   const saved = [];
   for (const [index, validated] of validatedFiles.entries()) {
-    const { file, buffer, isVideo, mime } = validated;
+    const { file, buffer, isVideo, mime, contentHash } = validated;
     const id = crypto.randomUUID();
     const filename = `${id}.${allowed[mime]}`;
     await fsp.writeFile(path.join(UPLOAD_DIR, filename), buffer);
     const item = {
       id, journalId, scope, type: isVideo ? 'video' : 'image', url: `/assets/images/uploads/${filename}`,
       alt: cleanText(file.alt || `${isVideo ? 'Video' : 'Ảnh'} kỷ niệm ${index + 1}`, 180),
-      caption: cleanText(file.caption, 300), sortOrder: index,
+      caption: cleanText(file.caption, 300), contentHash, sortOrder: targetMedia.length + index,
       createdAt: new Date().toISOString()
     };
     mediaStore.media.push(item);
@@ -175,7 +188,7 @@ async function saveMedia(files, links, journalId, scope = 'journal') {
       url: normalized.embedUrl,
       alt: normalized.provider === 'youtube' ? 'Video YouTube' : 'Video Google Drive',
       caption: normalized.provider === 'youtube' ? 'Video từ YouTube' : 'Video từ Google Drive',
-      sortOrder: saved.length + offset, createdAt: new Date().toISOString()
+      sortOrder: targetMedia.length + saved.length + offset, createdAt: new Date().toISOString()
     };
     mediaStore.media.push(item);
     saved.push(item);
